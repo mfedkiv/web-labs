@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/user-styles.css">
+</head>
+<body>
+    <div class="user_profile">
+        <div class="user_img_container">
+            <img class="user_profile__img" src="img/avatar.png" alt="default profile image">
+            <p class="user_profile__text">User</p>
+        </div>
+        <form class="user_info_container">
+            <label for="first-name" class="user_profile__text">First name:</label>
+            <input type="text" class="user_profile__input" id="first-name" value="Maksym">
+            <label for="second-name" class="user_profile__text">Second name:</label>
+            <input type="text" class="user_profile__input" id="second-name" value="Fedkiv">
+            <label for="login" class="user_profile__text">Login:</label>
+            <input type="text" class="user_profile__input" id="login" value="mfedkiv">
+            <label for="password" class="user_profile__text">Password:</label>
+            <input type="text" class="user_profile__input" id="password" value="">
+            <label for="repeated-password" class="user_profile__text">Repeat password:</label>
+            <input type="text" class="user_profile__input" id="repeated-password" value="">
+            <div class="button-wrapper">
+                <button type="submit" class="user_profile__button">Submit</button>
+                <button type="button" class="user_profile__button delete">Delete</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
