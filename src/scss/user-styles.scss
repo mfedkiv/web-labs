@@ -23,7 +23,8 @@ body {
   grid-template-rows: repeat(2, 150px) 30px;
   gap: .5rem;
 
-  width: 30%;
+  width: 40%;
+  min-width: 200px;
 
   border-radius: $borderRadius;
   box-shadow: $shadow;
@@ -41,6 +42,7 @@ body {
     gap: .5rem;
 
     grid-row-start: 1;
+    grid-column-start: 1;
 
     .user_profile__input {
       width: 70%;
@@ -97,4 +99,23 @@ body {
     }
   }
 
+  @media screen and (max-width: 1000px) {
+    .user_img_container{
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+
+    .user_info_container{
+      grid-row-start: 2;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .user_profile {
+    width: 50%;
+
+    grid-template-rows: 200px repeat(2, 170px);
+    grid-template-columns: 1fr;
+  }
 }
