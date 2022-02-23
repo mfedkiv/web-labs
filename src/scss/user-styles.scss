@@ -1,0 +1,121 @@
+@import "variables";
+@import "buttons";
+
+html{
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+
+  margin: 0;
+
+  font-family: $secondaryFont
+}
+
+.user_profile {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 150px) 30px;
+  gap: .5rem;
+
+  width: 40%;
+  min-width: 200px;
+
+  border-radius: $borderRadius;
+  box-shadow: $shadow;
+
+  padding: 2rem;
+
+  .user_profile__text {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  .user_info_container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    grid-row-start: 1;
+    grid-column-start: 1;
+
+    .user_profile__input {
+      width: 70%;
+
+      font-size: 1rem;
+
+      padding: .125rem;
+
+      border: 1px solid #43576c;
+      border-radius: $borderRadius;
+    }
+
+    .button-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      width: calc(70% + .125rem * 2);
+
+      .user_profile__button {
+        @include submit;
+      }
+
+      .user_profile__button:hover {
+        @include submit-hover
+      }
+
+      .delete {
+        @include delete
+      }
+
+      .delete:hover {
+        @include delete-hover
+      }
+    }
+  }
+
+  .user_img_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    grid-column: 2 / 3;
+    grid-row: span 2;
+    align-self: start;
+
+    box-sizing: border-box;
+
+    .user_profile__img {
+      width: 10rem;
+      height: 10rem;
+
+      border-radius: $borderRadius50;
+      object-fit: cover;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .user_img_container{
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+
+    .user_info_container{
+      grid-row-start: 2;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .user_profile {
+    width: 50%;
+
+    grid-template-rows: 200px repeat(2, 170px);
+    grid-template-columns: 1fr;
+  }
+}

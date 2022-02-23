@@ -1,0 +1,75 @@
+@import "variables";
+@import "buttons";
+
+html{
+  height: 100%;
+
+  font-family: $primaryFont;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  margin: 0;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  width: 20%;
+  min-width: 250px;
+
+  border-radius: $borderRadius;
+  box-shadow: $shadow;
+
+  padding: 1rem 0;
+}
+
+.form__header{
+  margin: 0;
+}
+
+.form__input{
+  font-size: 1rem;
+
+  border: 1px solid #43576c;
+  border-radius: $borderRadius;
+
+  padding: .5rem .5rem;
+}
+
+.form__input::placeholder{
+  color: #4d5257;
+}
+
+.mandatory_field{
+  position: relative;
+}
+
+.mandatory_field::after{
+  content: '*';
+  color: red;
+
+  position: absolute;
+  right: 2%;
+}
+
+.form__button{
+  @include submit
+}
+
+.form__button:hover{
+  @include submit-hover
+}
+
+.form__text{
+  font-size: .8rem;
+
+  margin: 0;
+}
