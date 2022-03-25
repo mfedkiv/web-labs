@@ -44,6 +44,7 @@ body {
     grid-row-start: 1;
     grid-column-start: 1;
 
+
     .user_profile__input {
       width: 70%;
 
@@ -53,6 +54,15 @@ body {
 
       border: 1px solid #43576c;
       border-radius: $borderRadius;
+    }
+
+    .user_profile__error {
+      width: 80%;
+
+      margin: 0;
+
+      color: red;
+      font-size: .7rem;
     }
 
     .button-wrapper {
@@ -110,6 +120,25 @@ body {
     }
   }
 }
+
+.accepted {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.accepted::after {
+  content: '😀';
+}
+
+.declined {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.declined::after {
+  content: '🙁';
+}
+
 
 @media screen and (max-width: 1000px) {
   .user_profile {
