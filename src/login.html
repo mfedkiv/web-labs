@@ -11,17 +11,19 @@
             rel="stylesheet"
     />
     <link rel="stylesheet" href="css/login.css">
+    <script src="js/login.js" defer></script>
 </head>
 <body>
 
     <form class="form">
         <h1 class="form__header">Log In</h1>
-        <div class="mandatory_field">
-            <input class="form__input" type="text" placeholder="Login">
-        </div>
-        <div class="mandatory_field">
-            <input class="form__input" type="password" placeholder="Password">
-        </div>
+
+        <input class="form__input" name="username" type="text" placeholder="Login">
+        <label class="form__label">
+            <input class="form__input" name="password" type="password" placeholder="Password">
+            <p class="form__message"></p>
+        </label>
+
         <button class="form__button" type="submit">Submit</button>
 
         <p class="form__text">Don't have account yet? <a href="registration.html">Sign up!</a></p>

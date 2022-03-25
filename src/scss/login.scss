@@ -1,13 +1,13 @@
 @import "variables";
 @import "buttons";
 
-html{
+html {
   height: 100%;
 
   font-family: $primaryFont;
 }
 
-body{
+body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@ body{
   margin: 0;
 }
 
-.form{
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,11 +31,11 @@ body{
   padding: 1rem 0;
 }
 
-.form__header{
+.form__header {
   margin: 0;
 }
 
-.form__input{
+.form__input {
   font-size: 1rem;
 
   border: 1px solid #43576c;
@@ -44,32 +44,60 @@ body{
   padding: .5rem .5rem;
 }
 
-.form__input::placeholder{
+.form__input::placeholder {
   color: #4d5257;
 }
 
-.mandatory_field{
+.accepted {
   position: relative;
 }
 
-.mandatory_field::after{
-  content: '*';
-  color: red;
+.accepted::after {
+  content: '😀';
 
   position: absolute;
-  right: 2%;
+  right: .5rem;
+  top: .4rem;
 }
 
-.form__button{
+.declined {
+  position: relative;
+}
+
+.declined::after {
+  content: '🙁';
+
+  position: absolute;
+  right: .5rem;
+  top: .4rem;
+}
+
+.form__button {
   @include submit
 }
 
-.form__button:hover{
+.form__button:hover {
   @include submit-hover
 }
 
-.form__text{
+.form__text {
   font-size: .8rem;
+
+  margin: 0;
+}
+
+.form__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.form__message {
+  width: 100%;
+
+  font-size: .7rem;
+  color: red;
 
   margin: 0;
 }

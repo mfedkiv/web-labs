@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   height: 100%; }
 
@@ -34,6 +35,11 @@ body {
       padding: .125rem;
       border: 1px solid #43576c;
       border-radius: 5px; }
+    .user_profile .user_info_container .user_profile__error {
+      width: 80%;
+      margin: 0;
+      color: red;
+      font-size: .7rem; }
     .user_profile .user_info_container .button-wrapper {
       display: flex;
       justify-content: space-between;
@@ -75,6 +81,20 @@ body {
       grid-row: span 1; }
     .user_profile .user_info_container {
       grid-row-start: 2; } }
+
+.accepted {
+  display: flex;
+  justify-content: flex-start; }
+
+.accepted::after {
+  content: '😀'; }
+
+.declined {
+  display: flex;
+  justify-content: flex-start; }
+
+.declined::after {
+  content: '🙁'; }
 
 @media screen and (max-width: 1000px) {
   .user_profile {

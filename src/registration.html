@@ -11,28 +11,26 @@
             rel="stylesheet"
     />
     <link rel="stylesheet" href="css/login.css">
+    <script src="js/registration.js" defer></script>
 </head>
 
 <body>
     <form class="form">
         <h1 class="form__header">Sign up</h1>
 
-        <div class="mandatory_field">
-            <input class="form__input" type="text" placeholder="First name">
-        </div>
+        <input class="form__input" type="text" name="name" placeholder="First name" required>
 
-        <div class="mandatory_field">
-            <input class="form__input" type="text" placeholder="Second name">
-        </div>
+        <input class="form__input" type="text" name="surname" placeholder="Second name" required>
 
-        <div class="mandatory_field">
-            <input class="form__input" type="text" placeholder="Login">
-        </div>
-        <div class="mandatory_field">
-            <input class="form__input" type="password" placeholder="Password">
-        </div>
-        <div class="mandatory_field">
-            <input class="form__input" type="password" placeholder="Confirm password">
+        <label class="form__label">
+            <input class="form__input" type="text" name="username" placeholder="Login" required>
+            <p class="form__message"></p>
+        </label>
+
+        <input class="form__input" type="password" id="password" name="password" placeholder="Password" required>
+
+        <div>
+            <input class="form__input" type="password" id="confirm_password" placeholder="Confirm password" required>
         </div>
         <button class="form__button" type="submit">Submit</button>
 
