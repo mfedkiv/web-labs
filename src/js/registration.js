@@ -1,7 +1,8 @@
+import { passwordInputHandler } from './unit.mjs';
+
 const form = document.querySelector('.form');
 const passwordInput = document.querySelector('#password');
 const confirmPasswordInput = document.querySelector('#confirm_password');
-const submitButton = document.querySelector('.form__button');
 const errorMessage = document.querySelector('.form__message');
 
 function formHandler(event) {
@@ -34,22 +35,6 @@ function formHandler(event) {
         .catch((error) => {
             errorMessage.innerText = JSON.parse(error.message).message;
         });
-}
-
-function checkPasswords() {
-    return passwordInput.value === confirmPasswordInput.value && passwordInput.value !== '' && confirmPasswordInput.value !== '';
-}
-
-function passwordInputHandler() {
-    if (passwordInput.value === '' && confirmPasswordInput.value === '') {
-        confirmPasswordInput.parentElement.classList.remove('declined');
-        confirmPasswordInput.parentElement.classList.remove('accepted');
-    } else {
-        confirmPasswordInput.parentElement.classList.toggle('declined', !checkPasswords());
-        confirmPasswordInput.parentElement.classList.toggle('accepted', checkPasswords());
-    }
-
-    submitButton.disabled = !checkPasswords();
 }
 
 passwordInput.addEventListener('keyup', passwordInputHandler);
