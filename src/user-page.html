@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/user-styles.css">
-    <script src="js/user-page.js" defer></script>
+    <script src="js/unit.mjs" type="module"></script>
+    <script src="js/user-page.js" type="module" defer></script>
 </head>
 <body>
     <div class="user_profile">
@@ -20,14 +21,14 @@
         </div>
         <form class="user_info_container">
             <label for="first-name" class="user_profile__text">First name:</label>
-            <input type="text" name="name" class="user_profile__input" id="first-name" value="" required>
+            <input type="text" name="name" class="user_profile__input" id="first-name" value="" required autocomplete="off">
 
             <label for="second-name" class="user_profile__text">Second name:</label>
-            <input type="text" name="surname" class="user_profile__input" id="second-name" value="" required>
+            <input type="text" name="surname" class="user_profile__input" id="second-name" value="" required autocomplete="off">
 
             <label for="login" class="user_profile__text">Username:</label>
             <div class="user_info_container__section">
-                <input type="text" name="username" class="user_profile__input" id="login" value="" required>
+                <input type="text" name="username" class="user_profile__input" id="login" value="" required autocomplete="off">
                 <p class="user_profile__error"></p>
             </div>
 
@@ -40,7 +41,7 @@
             </div>
 
             <div class="button-wrapper">
-                <button type="submit" class="user_profile__button">Submit</button>
+                <button type="submit" class="user_profile__button form__button">Submit</button>
                 <button type="button" class="user_profile__button delete">Delete</button>
             </div>
         </form>
