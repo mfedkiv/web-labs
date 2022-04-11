@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="user_profile">
+    <div class="user_img_container">
+      <img class="user_profile__img" src="assets/images/profile-default.png" alt="default profile image">
+      <p class="user_profile__text">User</p>
+    </div>
+    <form class="user_info_container" [formGroup]="form">
+      <label for="first-name" class="user_profile__text">First name:</label>
+      <input formControlName="name"
+        type="text" name="name" class="user_profile__input" id="first-name" value="" required autocomplete="off">
+
+      <label for="second-name" class="user_profile__text">Second name:</label>
+      <input formControlName="surname"
+        type="text" name="surname" class="user_profile__input" id="second-name" value="" required autocomplete="off">
+
+      <label for="login" class="user_profile__text">Username:</label>
+      <div class="user_info_container__section">
+        <input formControlName="username"
+          type="text" name="username" class="user_profile__input" id="login" value="" required autocomplete="off">
+        <p class="user_profile__error">{{ errorMessage }}</p>
+      </div>
+
+      <label for="password" class="user_profile__text">Password:</label>
+      <input (input)="checkInput()" formControlName="password"
+             type="password" name="password" class="user_profile__input" id="password" value="" maxlength="30">
+
+      <label for="confirm_password" class="user_profile__text">Repeat password:</label>
+      <div
+        [ngClass]="{
+        declined: !isEqualPassword && canBeDisplayed,
+        accepted: isEqualPassword && canBeDisplayed
+        }">
+        <input (input)="checkInput()" [(ngModel)]="confirmPasswordInput" [ngModelOptions]="{standalone: true}"
+               type="password" class="user_profile__input" id="confirm_password" value="" maxlength="30">
+      </div>
+
+      <div class="button-wrapper">
+        <button [disabled]="!isEqualPassword"
+          type="submit" class="user_profile__button form__button" (click)="submitHandler()">Submit</button>
+        <button type="button" class="user_profile__button delete" (click)="deleteHandler()">Delete</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<button class="logout-button" (click)="logoutHandler()">Logout</button>

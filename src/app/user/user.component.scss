@@ -1,20 +1,13 @@
-@import "variables";
-@import "buttons";
+@import "src/styles/variables";
+@import "src/styles/buttons";
 
-html{
-  height: 100%;
-}
-
-body {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  height: 100%;
-
-  margin: 0;
-
-  font-family: $secondaryFont
+  height: 100vh;
+  font-family: $secondaryFont;
 }
 
 .user_profile {
@@ -33,7 +26,6 @@ body {
 
   .user_profile__text {
     font-size: 1.125rem;
-    font-weight: 600;
   }
 
   .user_info_container {
@@ -72,11 +64,11 @@ body {
       width: calc(70% + .125rem * 2);
 
       .user_profile__button {
-        @include submit;
+        @include submit(#0a5d5c);
       }
 
       .user_profile__button:hover {
-        @include submit-hover
+        @include submit-hover(#0a5d5c);
       }
 
       .delete {
@@ -95,7 +87,7 @@ body {
     align-items: center;
 
     grid-column: 2 / 3;
-    grid-row: span 2;
+    grid-row: 1 / 2;
     align-self: start;
 
     box-sizing: border-box;
@@ -110,12 +102,12 @@ body {
   }
 
   @media screen and (max-width: 1000px) {
-    .user_img_container{
+    .user_img_container {
       grid-column: span 1;
       grid-row: span 1;
     }
 
-    .user_info_container{
+    .user_info_container {
       grid-row-start: 2;
     }
   }
@@ -139,6 +131,16 @@ body {
   content: '🙁';
 }
 
+.logout-button {
+  position: absolute;
+  top: .125rem;
+  right: .125rem;
+  @include submit(#0a7977);
+}
+
+.logout-button:hover {
+  @include submit-hover(#0a7977);
+}
 
 @media screen and (max-width: 1000px) {
   .user_profile {

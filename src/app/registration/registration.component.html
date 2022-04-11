@@ -1,0 +1,33 @@
+<div class="container">
+  <form ngNativeValidate [formGroup]="form" (ngSubmit)="submitHandler()"
+        class="form" name="form">
+    <h1 class="form__header">Sign up</h1>
+
+    <input formControlName="name"
+      class="form__input" type="text" name="name" placeholder="First name" required autocomplete="off">
+
+    <input formControlName="surname"
+      class="form__input" type="text" name="surname" placeholder="Second name" required autocomplete="off">
+
+    <label class="form__label">
+      <input formControlName="username"
+        class="form__input" type="text" name="username" placeholder="Login" required autocomplete="off">
+      <p class="form__message"> {{ errorMessage }} </p>
+    </label>
+
+    <input formControlName="password" (input)="checkInput()"
+      class="form__input" type="password" id="password" name="password" placeholder="Password" required maxlength="30">
+    <div
+      [ngClass]="{
+        declined: !isEqualPassword && canBeDisplayed,
+        accepted: isEqualPassword && canBeDisplayed
+      }"
+    >
+      <input (input)="checkInput()"  [(ngModel)]="confirmPasswordInput" [ngModelOptions]="{standalone: true}"
+             class="form__input" type="password" id="confirm_password" placeholder="Confirm password" maxlength="30">
+    </div>
+    <button class="form__button" type="submit" [disabled]="!canBeClicked">Submit</button>
+
+    <p class="form__text">Already have an account? <a routerLink="/login">Sign in!</a></p>
+  </form>
+</div>
