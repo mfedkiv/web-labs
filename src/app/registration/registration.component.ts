@@ -6,7 +6,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['registration.component.scss']
+  styleUrls: ['../login/login.component.scss']
 })
 export class RegistrationComponent implements OnInit {
   confirmPasswordInput: string = '';
