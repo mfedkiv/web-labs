@@ -1,0 +1,98 @@
+@import "../../styles/variables";
+@import "../../styles/buttons";
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  font-family: $primaryFont;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  width: 20%;
+  min-width: 250px;
+
+  border-radius: $borderRadius;
+  box-shadow: $shadow;
+
+  padding: 1rem 0;
+}
+
+.form__header {
+  margin: 0;
+}
+
+.form__input {
+  font-size: 1rem;
+
+  border: 1px solid #43576c;
+  border-radius: $borderRadius;
+
+  padding: .5rem .5rem;
+}
+
+.form__input::placeholder {
+  color: #4d5257;
+}
+
+.accepted {
+  position: relative;
+}
+
+.accepted::after {
+  content: '😀';
+
+  position: absolute;
+  right: .5rem;
+  top: .4rem;
+}
+
+.declined {
+  position: relative;
+}
+
+.declined::after {
+  content: '🙁';
+
+  position: absolute;
+  right: .5rem;
+  top: .4rem;
+}
+
+.form__button {
+  @include submit(#0a5d5c);
+}
+
+.form__button:hover {
+  @include submit-hover(#0a5d5c);
+}
+
+.form__text {
+  font-size: .8rem;
+
+  margin: 0;
+}
+
+.form__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.form__message {
+  width: 88%;
+
+  font-size: .7rem;
+  color: red;
+
+  margin: 0;
+}

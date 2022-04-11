@@ -1,19 +1,14 @@
-@import "variables";
-@import "buttons";
+@import "../../styles/variables";
+@import "../../styles/buttons";
 
-html {
-  height: 100%;
 
-  font-family: $primaryFont;
-}
-
-body {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  height: 100%;
-  margin: 0;
+  height: 100vh;
+  font-family: $primaryFont;
 }
 
 .form {
@@ -73,11 +68,11 @@ body {
 }
 
 .form__button {
-  @include submit
+  @include submit(#0a5d5c);
 }
 
 .form__button:hover {
-  @include submit-hover
+  @include submit-hover(#0a5d5c);
 }
 
 .form__text {

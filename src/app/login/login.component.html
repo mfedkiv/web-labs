@@ -1,0 +1,18 @@
+<div class="container">
+  <form class="form" ngNativeValidate [formGroup]="form" (ngSubmit)="submitHandler()">
+    <h1 class="form__header">Log In</h1>
+
+    <input formControlName="username"
+      class="form__input" name="username" type="text" placeholder="Login" autocomplete="off">
+    <label class="form__label">
+      <input formControlName="password"
+        class="form__input" name="password" type="password" placeholder="Password" autocomplete="off">
+      <p class="form__message"> {{ errorMessage }} </p>
+    </label>
+
+    <button class="form__button" type="submit">Submit</button>
+
+    <p class="form__text">Don't have account yet? <a routerLink="/registration">Sign up!</a></p>
+  </form>
+
+</div>

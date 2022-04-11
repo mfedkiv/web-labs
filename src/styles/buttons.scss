@@ -1,0 +1,32 @@
+@import "variables";
+
+
+@mixin submit($bg) {
+  cursor: pointer;
+
+  font-size: 1rem;
+  color: #fff;
+
+  padding: .5rem .5rem;
+
+  background-color: $bg;
+  border: none;
+  border-radius: $borderRadius;
+}
+
+@mixin submit-hover($bg) {
+  color: $bg;
+  border: 2px solid $bg;
+  background-color: #fff;
+
+  padding: calc(0.5rem - 2px)  calc(0.5rem - 2px);
+}
+
+@mixin delete {
+  background-color: #ff5627;
+}
+
+@mixin delete-hover {
+  color: #ff5627;
+  border: 2px solid #ff5627;
+}
