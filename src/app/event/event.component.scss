@@ -1,0 +1,33 @@
+@import "src/styles/variables";
+@import "src/styles/buttons";
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+
+
+  margin: 1rem 0;
+
+  &__input {
+    font-size: 1rem;
+  }
+
+  &__button {
+    @include submit(#0a5d5c);
+  }
+
+  &__button:hover {
+    @include submit-hover(#0a5d5c);
+  }
+
+  &__button-delete {
+    @include delete;
+  }
+
+  &__button-delete:hover {
+    @include delete-hover;
+  }
+}

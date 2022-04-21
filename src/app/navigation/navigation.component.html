@@ -1,0 +1,8 @@
+<header class="header">
+  <a class="header__element" routerLink="/">CalendarApp</a>
+  <section class="header-section">
+    <a *ngIf="isLoggedIn"
+      class="header__element" routerLink="/user">User</a>
+    <a class="header__element login__element" routerLink="/login">Login</a>
+  </section>
+</header>

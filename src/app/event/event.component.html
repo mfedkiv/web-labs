@@ -1,0 +1,13 @@
+<form class="form" [formGroup]="form">
+  <label>Title: </label>
+  <input formControlName="title"
+    class="form__input" type="text" [readonly]="!isOwner">
+  <label>Date: </label>
+  <input formControlName="date"
+    class="form__input" type="date" [readonly]="!isOwner">
+
+  <button (click)="submitHandler()" *ngIf="isOwner"
+    class="form__button" type="submit">Change</button>
+  <button (click)="deleteHandler()" *ngIf="isOwner"
+    class="form__button form__button-delete" type="button">Delete</button>
+</form>

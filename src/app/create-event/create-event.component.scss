@@ -1,0 +1,44 @@
+@import "src/styles/variables";
+@import "src/styles/buttons";
+
+.form-wrapper {
+  position: absolute;
+  top: 25%;
+  left: 35%;
+
+  width: 30%;
+  height: 50%;
+
+  border-radius: $borderRadius ;
+  box-shadow: $shadow;
+
+  background-color: white;
+
+  .event-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    height: 100%;
+
+    font-family: $secondaryFont;
+    font-size: 1.5rem;
+
+    &__input {
+      width: 15rem;
+      font-size: 1.5rem;
+    }
+
+    &__button {
+      @include submit(#0a5d5c);
+      font-size: 1.5rem;
+    }
+
+    &__button:hover {
+      @include submit-hover(#0a5d5c);
+      font-size: 1.5rem;
+    }
+  }
+}

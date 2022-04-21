@@ -32,13 +32,15 @@ export class LoginComponent implements OnInit {
           next: (data) => {
             // @ts-ignore
             window.localStorage.accessToken = data.access_token;
-            this.router.navigate(['/user']);
+            // @ts-ignore
+            window.localStorage.userId = data.userId;
+            this.router.navigate(['/']);
           },
           error: (errorResponse) => {
             this.errorMessage = errorResponse.error.message
           }
         }
-      )
+      );
   }
 
 }

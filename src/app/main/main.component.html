@@ -1,0 +1,18 @@
+<app-navigation></app-navigation>
+<div class="wrapper">
+  <section class="inner-section">
+    <div class="text-section">
+      <h1 class="text-section__header text-section__text">Calendar and event tools.</h1>
+      <p class="text-section__description text-section__text">Make it easy to share events with friends and join others.</p>
+    </div>
+    <img class="image" src="assets/images/calendar.png" alt="Calendar icon">
+  </section>
+
+  <section class="button-section">
+    <button (click)="onCreatingNewEvent()"
+      class="button-section__button">Create new event</button>
+    <button class="button-section__button" (click)="onShowMyEvents()">Show my events</button>
+    <button class="button-section__button" (click)="onShowAllEvents()">Show all events</button>
+  </section>
+</div>
+

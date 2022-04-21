@@ -1,0 +1,22 @@
+<app-background-blur></app-background-blur>
+<div class="wrapper">
+  <div class="form-wrapper"
+    *ngIf="isAllEvents">
+    <h1 class="form-wrapper__header">All Events</h1>
+    <div class="container">
+      <app-event
+        (onEventDeleting)="deleteEvent($event)"
+        *ngFor="let event of eventList" [element]="event"></app-event>
+    </div>
+  </div>
+
+  <div class="form-wrapper"
+    *ngIf="!isAllEvents">
+    <h1 class="form-wrapper__header">My Events</h1>
+    <div class="container">
+      <app-event
+        (onEventDeleting)="deleteEvent($event)"
+        *ngFor="let event of eventList" [element]="event"></app-event>
+    </div>
+  </div>
+</div>

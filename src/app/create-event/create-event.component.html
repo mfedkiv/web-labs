@@ -1,0 +1,18 @@
+<app-background-blur></app-background-blur>
+<div class="form-wrapper">
+  <form class="event-form" [formGroup]="form" (ngSubmit)="submitHandler()">
+    <label class="event-form__label">
+      Event title:
+    </label>
+    <input formControlName="title"
+           class="event-form__input" type="text">
+
+    <label class="event-form__label">
+      Date of event:
+    </label>
+    <input formControlName="date"
+           class="event-form__input" type="date">
+
+    <button class="event-form__button" type="submit">Submit</button>
+  </form>
+</div>
