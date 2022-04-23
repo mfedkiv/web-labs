@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
@@ -32,13 +32,13 @@ export class CreateEventComponent implements OnInit {
     }
     this.http.post('http://127.0.0.1:5000/events', this.form.getRawValue(), {headers})
       .subscribe({
-        next: (data) => {
-          this.router.navigate(['/']);
-        },
-        error: (errorResponse) => {
-          alert('Oops something went wrong!');
+          next: () => {
+            this.router.navigate(['/']);
+          },
+          error: () => {
+            alert('Oops something went wrong!');
+          }
         }
-      }
       );
   }
 

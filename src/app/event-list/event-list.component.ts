@@ -12,12 +12,11 @@ export class EventListComponent implements OnInit {
   eventList: Array<Event> = [];
 
   constructor(
-    private http: HttpClient,
+    private http: HttpClient
   )
   {
     this.isAllEvents = history.state.isAllEvents;
   }
-
 
   ngOnInit(): void {
     const headers = {
